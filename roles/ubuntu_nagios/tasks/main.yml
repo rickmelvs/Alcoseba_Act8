@@ -1,0 +1,17 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Nagios dependencies on Ubuntu
+  apt:
+    name:
+      - apache2
+      - nagios3
+    state: present
+
+- name: Start and enable Nagios service on Ubuntu
+  systemd:
+    name: nagios3
+    enabled: yes
+    state: started

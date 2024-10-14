@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  roles:
+    - ubuntu_nagios
+
+- hosts: centos
+  become: yes
+  roles:
+    - centos_nagios
